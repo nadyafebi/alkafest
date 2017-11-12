@@ -1,0 +1,116 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<!--Website Made by Nadya Febiana-->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panitia Alkafest</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <script src="js/vendor/modernizr.js"></script>
+  </head>
+
+  <body>
+    <!--Magic Start Here!-->
+    <header id="header">
+      <img src="img/logo.png" alt="Logo"/>
+    </header>
+
+    <!--Ticket Check Form-->
+    <div id="body">
+      <div class="row">
+        <div class="small-centered large-8 column">
+          <h1>Cek Tiket</h1>
+          <p style="color:#f44336">Jangan digunakan sebelum hari H.</p>
+          <form data-abide action="javascript:submitForm()">
+            <label>Nomor Tiket
+              <input type="text" required pattern="\d{8}" id="noBox" />
+              <small class="error">Tolong ketik nomor tiket anda dengan benar.</small>
+            </label>
+            <button type="submit" id="submitForm" class="round button">Cek Tiket</button>
+          </form>
+          <a href="daftartiket.html" class="round button">Daftar Tiket</a>
+        </div>
+      </div>
+    </div>
+
+    <!--Ticket Check Modal-->
+    <div id="checkModal" class="tiny reveal-modal" data-reveal>
+      <h1 id="modalTitle">Ticket Status</h1>
+      <div id="status">
+      </div>
+      <a href="#" class="round button" onclick="javascript:updateTiket()">Ganti Status: Sudah Masuk</a>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+
+    <!--Ticket Check Fail Modal-->
+    <div id="failModal" class="tiny reveal-modal" data-reveal>
+      <h1 id="modalTitle">Fail!</h1>
+      <p style="color:#f44336">Tidak ada tiket dengan nomor ini!</p>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+
+    <!--Wait Modal-->
+    <div id="waitModal" class="tiny reveal-modal" data-reveal>
+      <p>Harap tunggu sebentar dan jangan close window ini...</p>
+    </div>
+
+    <!--Scripts-->
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+
+    <script type="text/javascript">
+      function submitForm() {
+        var tiket = document.getElementById("noBox").value;
+
+        $("#waitModal").foundation('reveal', 'open');
+
+        $.ajax({
+          type: "POST",
+          url: "cektiket.php",
+          dataType: "html",
+          data: {
+            NoTiket: tiket
+          },
+          success: function(response) {
+            if (response == "NORESULT")
+            {
+              $("#failModal").foundation('reveal', 'open');
+            } else {
+              document.getElementById("status").innerHTML = response;
+              $("#checkModal").foundation('reveal', 'open');
+            }
+          },
+          error: function(response) {
+            alert("Terjadi error pada website. Cek koneksi anda atau contact panitia Alkafest.");
+          }
+        });
+      }
+
+      function updateTiket() {
+        var tiket = document.getElementById("noBox").value;
+
+        $("#waitModal").foundation('reveal', 'open');
+
+        $.ajax({
+          type: "POST",
+          url: "updatetiket.php",
+          dataType: "html",
+          data: {
+            NoTiket: tiket
+          },
+          success: function(response) {
+            submitForm();
+          },
+          error: function(response) {
+            alert("Terjadi error pada website. Cek koneksi anda atau contact panitia Alkafest.");
+          }
+        });
+      }
+    </script>
+  </body>
+
+</html>

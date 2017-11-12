@@ -1,0 +1,211 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<!--Website Made by Nadya Febiana-->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alkafest</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <script src="js/vendor/modernizr.js"></script>
+  </head>
+
+  <body>
+    <!--Magic Start Here!-->
+    <header id="header">
+      <img src="img/logo.png" alt="Logo"/>
+    </header>
+
+    <div id="body">
+
+      <!--Bands' Picture-->
+      <div class="row">
+        <div class="large-12 column">
+          <img class="show-for-medium-up" src="img/sheila.png" alt="SheilaOn7"/>
+          <img class="hide-for-medium-up"src="img/sheila1000.png" alt="SheilaOn7"/>
+          <hr />
+        </div>
+      </div>
+      <div class="show-for-medium-up row">
+        <div class="medium-4 small-offset-2 column">
+          <img src="img/odds.png" alt="Odds"/>
+        </div>
+        <div class="medium-4 end column">
+          <img src="img/ryan.png" alt="RyanTedja"/>
+        </div>
+      </div>
+      <div class="hide-for-medium-up row">
+        <div class="small-6 column">
+          <img src="img/ryan.png" alt="RyanTedja"/>
+        </div>
+        <div class="small-6 column">
+          <img src="img/odds.png" alt="Odds"/>
+        </div>
+      </div>
+
+      <!--Event Information-->
+      <div class="row">
+        <div class="large-12 column">
+          <hr />
+          <div class="row">
+            <div class="large-4 column">
+              <p>Date</p>
+              <h4>12 Desember 2015</h4>
+              <p>Open Gate</p>
+              <h4>15.00 WIB</p>
+            </div>
+            <div class="large-4 column">
+              <p>Venue</p>
+              <h4>Lapangan</h4>
+              <h4>SMAI Al-Azhar</h4>
+              <h4>Kelapa Gading</h4>
+            </div>
+            <div class="large-4 column">
+              <p>Pre-Sale</p>
+              <h4>Rp. 35.000</h4>
+              <p>On The Spot</p>
+              <h4>Sale: Rp. 50.000</h4>
+            </div>
+          </div>
+          <a href="#" class="round button" data-reveal-id="orderModal">Order your ticket now!</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!--Ticket Order Modal-->
+    <div id="orderModal" class="tiny reveal-modal" data-reveal>
+      <h1 id="modalTitle">Ticket Order</h1>
+      <form data-abide action="javascript:submitForm()">
+        <div class="row">
+          <div class="large-12 column">
+            <div class="row">
+              <div class="small-4 columns">
+                <label for="nameBox" class="left inline">Nama Lengkap</label>
+              </div>
+              <div class="small-8 columns">
+                <input type="text" required id="nameBox">
+                <small class="error">Tolong ketik nama anda dengan benar.</small>
+              </div>
+            </div>
+            <div class="row">
+              <div class="small-4 columns">
+                <label for="emailBox" class="left inline">Email</label>
+              </div>
+              <div class="small-8 columns">
+                <input type="text" required pattern="email" id="emailBox">
+                <small class="error">Tolong ketik alamat email anda dengan benar.</small>
+              </div>
+            </div>
+            <button type="submit" id="submitForm" class="round button">Order</button>
+          </div>
+        </div>
+      </form>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+
+    <!--Order Success Modal-->
+    <div id="successModal" class="tiny reveal-modal" data-reveal>
+      <h1 id="successTitle">Success!</h1>
+      <p style="color:#f44336">Tiket telah dikirim ke e-mail anda.</p>
+      <p>Tunggulah beberapa saat jika e-mail belum muncul atau cek folder spam.</p>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+
+    <div id="waitModal" class="tiny reveal-modal" data-reveal>
+      <p>Harap tunggu sebentar dan jangan close window ini...</p>
+    </div>
+
+    <!--Ticket Soldout Modal-->
+    <div id="soldModal" class="tiny reveal-modal" data-reveal>
+      <h1 id="modalTitle">Sold out!</h1>
+      <p style="color:#f44336">Maaf tiket telah habis.</p>
+      <p>Anda bisa contact panitia Alkafest untuk membeli tiket atau dapat membeli di loket tiket ketika hari H.</p>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+
+    <!--Footer-->
+    <footer id="footer">
+      <div class="row">
+        <div class="large-12 column">
+          <p>Sponsored by:</p>
+          <div class="row">
+            <div class="large-12 show-for-medium-up column">
+              <img src="img/sponsor/bni.png" alt="BNI" width="25%" height="25%" />
+            </div>
+            <div class="large-12 hide-for-medium-up column">
+              <img src="img/sponsor/bni.png" alt="BNI" width="50%" height="50%" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-6 column">
+              <p>Sponsor</p>
+              <ul class="small-block-grid-4">
+                <li><img src="img/sponsor/ancol.png" alt="Ancol" /></li>
+                <li><img src="img/sponsor/mcd.png" alt="McD" width="75%" height="75%" /></li>
+                <li><img src="img/sponsor/hydro.png" alt="HydroCoco" /></li>
+                <li><img src="img/sponsor/dimas.png" alt="Dimas" /></li>
+                <li><img src="img/sponsor/specta.png" alt="Specta" /></li>
+                <li><img src="img/sponsor/purwacaraka.png" alt="Purwacaraka" /></li>
+                <li><img src="img/sponsor/nh.png" alt="NH" width="75%" height="75%" /></li>
+                <li><img src="img/sponsor/emina.png" alt="Emina" /></li>
+              </ul>
+            </div>
+            <div class="large-6 column">
+              <p>Media Partner</p>
+              <ul class="small-block-grid-4">
+                <li><img src="img/sponsor/sunday.png" alt="Sunday" /></li>
+                <li><img src="img/sponsor/hai.png" alt="Hai" width="75%" height="75%" /></li>
+                <li><img src="img/sponsor/infopensi.png" alt="InfoPensi" /></li>
+                <li><img src="img/sponsor/80.png" alt="80" /></li>
+                <li><img src="img/sponsor/berisik.png" alt="Berisik" /></li>
+                <li><img src="img/sponsor/sheilagank.png" alt="SheilaGank" /></li>
+                <li><img src="img/sponsor/mustang.png" alt="Mustang" /></li>
+                <li><img src="img/sponsor/seputar.png" alt="Seputar" /></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!--Scripts-->
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+
+    <script>
+      function submitForm() {
+        var name = document.getElementById("nameBox").value;
+        var email = document.getElementById("emailBox").value;
+
+        $("#waitModal").foundation('reveal', 'open');
+
+        $.ajax({
+          type: "POST",
+          url: "register.php",
+          dataType: "html",
+          data: {
+            userName: name,
+            userEmail: email
+          },
+          success: function(response) {
+            console.log(response);
+            if (response == "SOLDOUT")
+            {
+              $("#soldModal").foundation('reveal', 'open');
+            }
+            else {
+              $("#successModal").foundation('reveal', 'open');
+            }
+          },
+          error: function(response) {
+            alert("Terjadi error pada website. Cek koneksi anda atau contact panitia Alkafest.");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
