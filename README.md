@@ -1,4 +1,4 @@
-<center>![logo](https://github.com/nadyafebi/alkafest/raw/master/logo.png)</center>
+<center><img src="https://github.com/nadyafebi/alkafest/raw/master/logo.png"></center>
 
 <br>
 
@@ -28,4 +28,4 @@ Swift Mailer is a PHP library to send emails. After submitting a ticket order, t
 
 ## Screenshot
 
-<center>![screenshot](https://github.com/nadyafebi/alkafest/raw/master/screenshot.png)</center>
+<center><img src="https://github.com/nadyafebi/alkafest/raw/master/screenshot.png"></center>
